@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        form { display: inline-block; text-align: left; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        label, input { display: block; margin-bottom: 10px; width: 100%; }
+        button { padding: 10px; background-color: blue; color: white; border: none; cursor: pointer; width: 100%; }
+    </style>
+</head>
+<body>
+    <h2>Heart Disease Prediction</h2>
+    <form id="prediction-form">
+        <label>Age:</label> <input type="number" id="age">
+        <label>Sex (1 = Male, 0 = Female):</label> <input type="number" id="sex">
+        <label>Chest Pain Type (0-3):</label> <input type="number" id="cp">
+        <label>Resting Blood Pressure:</label> <input type="number" id="trestbps">
+        <label>Serum Cholesterol (mg/dl):</label> <input type="number" id="chol">
+        <label>Fasting Blood Sugar (>120 mg/dl, 1=True, 0=False):</label> <input type="number" id="fbs">
+        <label>Resting ECG Results (0-2):</label> <input type="number" id="restecg">
+        <label>Max Heart Rate:</label> <input type="number" id="thalach">
+        <label>Exercise Induced Angina (1=Yes, 0=No):</label> <input type="number" id="exang">
+        <label>ST Depression:</label> <input type="number" step="0.1" id="oldpeak">
+        <label>Slope of Peak Exercise ST (0-2):</label> <input type="number" id="slope">
+        <label>Number of Major Vessels (0-3):</label> <input type="number" id="ca">
+        <label>Thalassemia (1-3):</label> <input type="number" id="thal">
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <script>
+        document.getElementById('prediction-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let features = [
+                parseInt(document.getElementById('age').value),
+                parseInt(document.getElementById('sex').value),
+                parseInt(document.getElementById('cp').value),
+                parseInt(document.getElementById('trestbps').value),
+                parseInt(document.getElementById('chol').value),
+                parseInt(document.getElementById('fbs').value),
+                parseInt(document.getElementById('restecg').value),
+                parseInt(document.getElementById('thalach').value),
+                parseInt(document.getElementById('exang').value),
+                parseFloat(document.getElementById('oldpeak').value),
+                parseInt(document.getElementById('slope').value),
+                parseInt(document.getElementById('ca').value),
+                parseInt(document.getElementById('thal').value)
+            ];
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ "features": features })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let message = data.prediction ? "⚠️ Heart Disease Detected! Consult a Doctor." : "✅ No Heart Disease Detected!";
+                alert(message);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
