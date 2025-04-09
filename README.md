@@ -11,8 +11,8 @@ The application uses a **Random Forest Classifier**, trained on balanced heart d
 1. **Web Interface**:
    - Inputs patient data (e.g., age, blood pressure, cholesterol levels).
    - Predicts whether there is a risk of heart disease with results as either:
-     - ✅ **No Heart Disease Detected**
-     - ⚠️ **Heart Disease Detected — Consult a Doctor**
+     -  **No Heart Disease Detected**
+     -  **Heart Disease Detected — Consult a Doctor**
 
 2. **Pipeline**:
    - **Data Preprocessing**: Handles imbalanced data using SMOTE and one-hot encodes categorical features.
@@ -35,8 +35,8 @@ The application uses a **Random Forest Classifier**, trained on balanced heart d
 ---
 
 ## **Folder Structure**
-📁 health_data_analysis
-│── 📁 data
+ health_data_analysis
+│──  data
 │   ├── heart.csv
 │   ├── heart_balanced.csv
 │   ├── heart_cleaned.csv
@@ -44,11 +44,11 @@ The application uses a **Random Forest Classifier**, trained on balanced heart d
 │   ├── X_test.csv
 │   ├── y_train.csv
 │   ├── y_test.csv
-│── 📁 models
+│──  models
 │   ├── heart_disease_model.pkl  # Trained model
 │   ├── scaler.pkl               # Scaler for preprocessing
-│── 📁 notebooks
-│── 📁 src
+│──  notebooks
+│──  src
 │   ├── app.py                   # Flask web application
 │   ├── data_preprocessing.py     # Data cleaning & preparation
 │   ├── feature_selection.py      # Feature selection methods
@@ -56,7 +56,7 @@ The application uses a **Random Forest Classifier**, trained on balanced heart d
 │   ├── model_evaluation.py       # Model evaluation & metrics
 │   ├── model_training.py         # Training the ML model
 │   ├── trash.py                  # (Unused or test scripts)
-│   ├── 📁 templates              # HTML frontend files
+│   ├──  templates              # HTML frontend files
 │── README.md                      # Project Documentation
 │── requirements.txt               # Dependencies
 
