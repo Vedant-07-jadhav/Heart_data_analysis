@@ -1,5 +1,25 @@
 # **Heart Disease Prediction using Machine Learning**
-
+<!-- TOC -->
+* [**Heart Disease Prediction using Machine Learning**](#heart-disease-prediction-using-machine-learning)
+  * [**Overview**](#overview)
+  * [**Features**](#features)
+  * [**Technologies Used**](#technologies-used)
+  * [**Folder Structure**](#folder-structure)
+  * [**Setup Instructions**](#setup-instructions)
+    * [**1. Install dependencies**](#1-install-dependencies)
+    * [**2. Train the model**](#2-train-the-model)
+    * [**3. Run the Flask application**](#3-run-the-flask-application)
+    * [**4. Use the Web Interface**](#4-use-the-web-interface)
+  * [**Dataset**](#dataset)
+    * [Sample Data Features:](#sample-data-features)
+  * [**Model Evaluation Results**](#model-evaluation-results)
+  * [**API Endpoints**](#api-endpoints)
+    * [**1. `/` (GET)**](#1--get)
+    * [**2. `/predict` (POST)**](#2-predict-post)
+  * [**Key Features to Explore**](#key-features-to-explore)
+  * [**Credits**](#credits)
+  * [**Contact**](#contact)
+<!-- TOC -->
 ## **Overview**
 This project demonstrates a Flask-based web application that predicts the likelihood of heart disease based on user input using a trained machine learning model. It is built as part of a data science pipeline that includes preprocessing, model training, evaluation, and deployment.
 
