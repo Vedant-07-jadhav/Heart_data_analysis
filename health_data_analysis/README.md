@@ -11,8 +11,8 @@ The application uses a **Random Forest Classifier**, trained on balanced heart d
 1. **Web Interface**:
    - Inputs patient data (e.g., age, blood pressure, cholesterol levels).
    - Predicts whether there is a risk of heart disease with results as either:
-     - ✅ **No Heart Disease Detected**
-     - ⚠️ **Heart Disease Detected — Consult a Doctor**
+     - **No Heart Disease Detected**
+     - **Heart Disease Detected — Consult a Doctor**
 
 2. **Pipeline**:
    - **Data Preprocessing**: Handles imbalanced data using SMOTE and one-hot encodes categorical features.
@@ -174,4 +174,5 @@ Example metrics (from training and evaluation):
 
 ## **Contact**
 If you have any questions, issues, or suggestions, feel free to reach out to:
+
 - **Email**: `vedantdjadhav712@gmail.com`
