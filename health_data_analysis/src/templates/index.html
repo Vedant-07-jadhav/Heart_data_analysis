@@ -58,7 +58,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                let message = data.prediction ? "⚠️ Heart Disease Detected! Consult a Doctor." : "✅ No Heart Disease Detected!";
+                let message = data.prediction ? "Heart Disease Detected! Consult a Doctor." : "No Heart Disease Detected!";
                 alert(message);
             })
             .catch(error => console.error('Error:', error));
@@ -66,3 +66,4 @@
     </script>
 </body>
 </html>
+
